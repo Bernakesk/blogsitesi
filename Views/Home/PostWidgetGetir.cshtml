@@ -1,0 +1,66 @@
+﻿@{ 
+    Layout = null;
+}
+<div class="widget posts">
+    <h5>Makaleler</h5>
+    <div class="widget-tabs">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#popular" data-toggle="tab">Popüler</a></li>
+            <li><span>/</span></li>
+            <li><a href="Yeni" data-toggle="tab">Fresh</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="popular">
+                <ul>
+                    @{ 
+                        Blog_.Models.Makale m = new Blog_.Models.Makale();
+                    }
+                    @foreach(var pop in ViewBag.Populer)
+                    {
+                        
+
+                    <li>
+                        <figure>
+                            <a href="#">
+                                <img src="@pop.Resim.KucukResimYol" alt="" />
+                            </a>
+                        </figure>
+                        <div class="text">
+                            <a href="#">@pop.Baslik</a>
+                            <a href="#" class="category">{ @pop.Kategori.Adi }</a>
+                        </div>
+                    </li>
+                    }
+                    
+                    
+                 
+                </ul>
+            </div>
+            <div class="tab-pane" id="fresh">
+                <ul>
+                    <li>
+                        <figure>
+                            <a href="#">
+                                <img src="/Content/content/widget-post03.jpg" alt="" />
+                            </a>
+                        </figure>
+                        <div class="text">
+                            <a href="#">Chocolate bar jelly-o sesame snaps oat cake.</a>
+                            <a href="#" class="category">{ Illustration }</a>
+                        </div>
+                    </li>
+                    <li>
+                        
+                        <div class="text">
+                            <a href="#">Cupcake ipsum dolor sit amet croissant I love.</a>
+                            <a href="#" class="category">{ Typography }</a>
+                        </div>
+                    </li>
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
